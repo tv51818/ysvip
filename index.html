@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>影视解析工具</title>
-    <!-- 替换为Cloudflare CDN资源 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.2/tailwind.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    <!-- 添加Cloudflare Pages适配的安全头 -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-src *; font-src https://cdnjs.cloudflare.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    
+    <title>爬取全网影视</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -64,11 +58,13 @@
         }
     </style>
     <style type="text/css">
-        .STYLE1 {
-            color: #FF0000;
-            font-weight: bold;
-        }
-        .STYLE2 {color: #FF00FF}
+<!--
+.STYLE1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.STYLE2 {color: #FF00FF}
+-->
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
@@ -77,7 +73,7 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <i class="fa fa-play-circle-o text-2xl"></i>
-                <h1 class="text-xl md:text-2xl font-bold">影视解析工具</h1>
+                <h1 class="text-xl md:text-2xl font-bold">爬取全网影视</h1>
             </div>
         </div>
     </header>
@@ -103,7 +99,7 @@
             <div class="mt-6">
                 <h3 class="text-lg font-medium text-gray-800 mb-3">热门视频平台</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <a href="https://www.iqiyi.com" target="_blank" rel="noopener noreferrer" class="platform-card rounded-lg overflow-hidden shadow-md iqiyi-bg text-white">
+                    <a href="https://www.iqiyi.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md iqiyi-bg text-white">
                         <div class="p-4 flex items-center">
                             <i class="fa fa-film text-3xl mr-3"></i>
                             <div>
@@ -112,7 +108,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://v.qq.com" target="_blank" rel="noopener noreferrer" class="platform-card rounded-lg overflow-hidden shadow-md tencent-bg text-white">
+                    <a href="https://v.qq.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md tencent-bg text-white">
                         <div class="p-4 flex items-center">
                             <i class="fa fa-television text-3xl mr-3"></i>
                             <div>
@@ -121,7 +117,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.youku.com" target="_blank" rel="noopener noreferrer" class="platform-card rounded-lg overflow-hidden shadow-md youku-bg text-white">
+                    <a href="https://www.youku.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md youku-bg text-white">
                         <div class="p-4 flex items-center">
                             <i class="fa fa-youtube-play text-3xl mr-3"></i>
                             <div>
@@ -130,7 +126,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.mgtv.com" target="_blank" rel="noopener noreferrer" class="platform-card rounded-lg overflow-hidden shadow-md mango-bg text-white">
+                    <a href="https://www.mgtv.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md mango-bg text-white">
                         <div class="p-4 flex items-center">
                             <i class="fa fa-music text-3xl mr-3"></i>
                             <div>
@@ -142,7 +138,7 @@
                 </div>
             </div>
             
-            <!-- 接口选择 -->
+            <!-- 接口选择（新增7个线路） -->
             <div class="mt-6">
                 <label class="block text-sm font-medium text-gray-700 mb-2">选择解析接口：</label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -263,8 +259,7 @@
                         <input type="radio" id="api12" name="api" value="http://47.96.82.41/so.php?wd=" class="peer sr-only">
                         <label for="api12" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
                             <span class="font-medium STYLE1">搜索线路</span>
-                            <span class="text-xs text-gray-500 ml-2 STYLE2">搜索影片名</span>
-                        </label>
+                            <span class="text-xs text-gray-500 ml-2 STYLE2">搜索影片名</span>                        </label>
                         <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
                             <i class="fa fa-check-circle"></i>
                         </div>
@@ -329,7 +324,7 @@
         </section>
     </main>
 
-    <!-- 页脚 -->
+    <!-- 简化的页脚 -->
     <footer class="bg-dark text-white py-6">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center space-x-4 mb-4">
@@ -337,8 +332,7 @@
                 <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa fa-weibo"></i></a>
                 <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa fa-envelope-o"></i></a>
             </div>
-            <p class="text-sm text-gray-400">© 2025 影视解析工具 | 本工具仅用于学习交流，请勿用于商业用途</p>
-            <p class="text-xs text-gray-500 mt-2">所有视频内容均来自第三方网站，与本工具无关</p>
+            <p class="text-sm text-gray-400">© 2025 爬取全网影视 | 保留所有权利</p>
         </div>
     </footer>
 
@@ -405,13 +399,6 @@
                         loadingIndicator.classList.add('hidden');
                         videoPlayer.classList.remove('opacity-0');
                     };
-                    
-                    // 超时处理
-                    setTimeout(() => {
-                        if (!loadingIndicator.classList.contains('hidden')) {
-                            alert('视频加载超时，请尝试其他线路');
-                        }
-                    }, 15000);
                 }, 500);
             });
             
@@ -433,12 +420,6 @@
                     playBtn.click();
                 }
             });
-            
-            // 添加错误处理
-            videoPlayer.onerror = function() {
-                alert('视频加载失败，请尝试其他解析线路');
-                loadingIndicator.classList.add('hidden');
-            };
         });
     </script>
 </body>
