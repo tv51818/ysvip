@@ -3,424 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小哥哥影视解析</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        dark: '#1E293B',
-                        iqiyi: '#FE2C55',
-                        youku: '#FFC107',
-                        tencent: '#2E82FF',
-                        mango: '#FF6B00',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
+    <title>闪连VPN - 高速稳定Clash机场|全球节点网络加速服务</title>
+    <meta name="keywords" content="闪连VPN, Clash机场, 高速VPN, 稳定节点, 科学上网, 全球网络, 网络加速, VPN服务" />
+    <meta name="description" content="闪连VPN提供高速稳定的Clash机场服务，全球节点覆盖，安全加密保护隐私，支持多设备使用，现在使用邀请码91729535即可免费试用15天。" />
+    
+    <style>
+        :root {
+            --accent: #0071e3;
+            --dark: #1d1d1f;
+            --light-bg: #f5f5f7;
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .shadow-custom {
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            }
-            .bg-gradient-custom {
-                background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-            }
-            .platform-card {
-                transition: all 0.3s ease;
-            }
-            .platform-card:hover {
-                transform: translateY(-5px);
-            }
-            .iqiyi-bg {
-                background: linear-gradient(135deg, #FE2C55 0%, #FF5E81 100%);
-            }
-            .youku-bg {
-                background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
-            }
-            .tencent-bg {
-                background: linear-gradient(135deg, #2E82FF 0%, #5DA2FF 100%);
-            }
-            .mango-bg {
-                background: linear-gradient(135deg, #FF6B00 0%, #FF8C38 100%);
-            }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.5;
+            overflow-x: hidden;
         }
-    </style>
-    <style type="text/css">
-<!--
-.STYLE1 {
-	color: #FF0000;
-	font-weight: bold;
-}
-.STYLE2 {color: #FF00FF}
--->
+
+        /* 顶部导航 Logo */
+        .top-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 40px;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), #00c6ff);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 113, 227, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        /* 全屏 Hero 容器 */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 40px;
+            background: radial-gradient(circle at 0% 0%, #f0f7ff 0%, #ffffff 50%);
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* 左侧文案 */
+        .content-left h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .content-left p {
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 30px;
+        }
+
+        .feature-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: var(--light-bg);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* 右侧核心操作区 */
+        .action-card {
+            background: var(--dark);
+            color: #fff;
+            padding: 50px 40px;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(0,113,227,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .download-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* 下载按钮：新窗口打开 */
+        .btn-download {
+            display: block;
+            background: #fff;
+            color: var(--dark);
+            padding: 22px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-4px);
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 113, 227, 0.4);
+        }
+
+        .invite-box {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .invite-label {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .invite-code {
+            font-family: "SF Mono", ui-monospace, Menlo, Monaco, monospace;
+            font-size: clamp(2.5rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            display: block;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .bonus-badge {
+            display: inline-block;
+            background: #ff3b30;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 900px) {
+            .top-nav { padding: 20px; text-align: center; }
+            .logo-container { justify-content: center; }
+            .hero-section { padding-top: 120px; }
+            .main-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .action-card { padding: 40px 24px; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col">
-    <!-- 导航栏 -->
-    <header class="bg-gradient-custom text-white shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa fa-play-circle-o text-2xl"></i>
-                <h1 class="text-xl md:text-2xl font-bold">小哥哥影视解析</h1>
-            </div>
+<body>
+
+    <div class="top-nav">
+        <div class="logo-container">
+            <div class="logo-icon">S</div>
+            <span class="logo-text">闪连VPN</span>
         </div>
-    </header>
+    </div>
 
-    <!-- 主要内容 -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <!-- 视频解析区域 -->
-        <section class="bg-white rounded-xl shadow-custom p-6 mb-8 transform transition-all duration-300 hover:shadow-lg">
-            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <i class="fa fa-link text-primary mr-2"></i>视频解析
-            </h2>
-            <div class="flex flex-col md:flex-row gap-4">
-                <div class="flex-grow">
-                    <input type="text" id="videoUrl" placeholder="请输入视频地址（支持优酷、爱奇艺、腾讯视频等）" 
-                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300">
-                </div>
-                <button id="playBtn" class="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
-                    <i class="fa fa-play mr-2"></i>播放视频
-                </button>
-            </div>
+    <section class="hero-section">
+        <div class="main-container">
             
-            <!-- 平台快捷跳转 -->
-            <div class="mt-6">
-                <h3 class="text-lg font-medium text-gray-800 mb-3">热门视频平台</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <a href="https://www.iqiyi.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md iqiyi-bg text-white">
-                        <div class="p-4 flex items-center">
-                            <i class="fa fa-film text-3xl mr-3"></i>
-                            <div>
-                                <div class="font-bold">爱奇艺</div>
-                                <div class="text-xs opacity-80">海量独播内容</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://v.qq.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md tencent-bg text-white">
-                        <div class="p-4 flex items-center">
-                            <i class="fa fa-television text-3xl mr-3"></i>
-                            <div>
-                                <div class="font-bold">腾讯视频</div>
-                                <div class="text-xs opacity-80">热门剧集综艺</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.youku.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md youku-bg text-white">
-                        <div class="p-4 flex items-center">
-                            <i class="fa fa-youtube-play text-3xl mr-3"></i>
-                            <div>
-                                <div class="font-bold">优酷</div>
-                                <div class="text-xs opacity-80">精彩视频尽在</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.mgtv.com" target="_blank" class="platform-card rounded-lg overflow-hidden shadow-md mango-bg text-white">
-                        <div class="p-4 flex items-center">
-                            <i class="fa fa-music text-3xl mr-3"></i>
-                            <div>
-                                <div class="font-bold">芒果TV</div>
-                                <div class="text-xs opacity-80">综艺娱乐首选</div>
-                            </div>
-                        </div>
-                    </a>
+            <div class="content-left">
+                <h1>极速连接，<br>从未如此简单。</h1>
+                <p>2026 全新 BGP 专线架构，为您提供稳定、安全、畅通无阻的全球网络加速服务。</p>
+                <div class="feature-tags">
+                    <span class="tag">⚡️ BGP 专线</span>
+                    <span class="tag">🛡️ 隐私加密</span>
+                    <span class="tag">📱 5台设备</span>
+                    <span class="tag">🎬 8K 丝滑</span>
                 </div>
             </div>
-            
-            <!-- 接口选择（新增7个线路） -->
-            <div class="mt-6">
-                <label class="block text-sm font-medium text-gray-700 mb-2">选择解析接口：</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-                    <!-- 原有线路 -->
-                    <div class="interface-option relative">
-                        <input type="radio" id="api1" name="api" value="https://jx.xmflv.com/?url=" class="peer sr-only" checked>
-                        <label for="api1" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">默认线路</span>
-                            <span class="text-xs text-gray-500 ml-2">推荐·稳定</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api2" name="api" value="https://www.8090g.cn/jiexi/?url=" class="peer sr-only">
-                        <label for="api2" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路一</span>
-                            <span class="text-xs text-gray-500 ml-2">多格式支持</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api3" name="api" value="https://z1.m1907.top/?jx=" class="peer sr-only">
-                        <label for="api3" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路二</span>
-                            <span class="text-xs text-gray-500 ml-2">推荐·快速</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api4" name="api" value="https://www.ckplayer.vip/jiexi/?url=" class="peer sr-only">
-                        <label for="api4" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路三</span>
-                            <span class="text-xs text-gray-500 ml-2">通用·兼容</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- 新增线路 -->
-                    <div class="interface-option relative">
-                        <input type="radio" id="api5" name="api" value="https://www.playm3u8.cn/jiexi.php?url=" class="peer sr-only">
-                        <label for="api5" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路四</span>
-                            <span class="text-xs text-gray-500 ml-2">流畅·稳定</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api6" name="api" value="http://111.6.188.162/bbqq.php?url=" class="peer sr-only">
-                        <label for="api6" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路五</span>
-                            <span class="text-xs text-gray-500 ml-2">备用线路</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api7" name="api" value="https://jx.hls.one/?url=" class="peer sr-only">
-                        <label for="api7" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路六</span>
-                            <span class="text-xs text-gray-500 ml-2">高速线路</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api8" name="api" value="https://www.yemu.xyz/?url=" class="peer sr-only">
-                        <label for="api8" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路七</span>
-                            <span class="text-xs text-gray-500 ml-2">多平台支持</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api9" name="api" value="https://jx.playerjy.com/?url=" class="peer sr-only">
-                        <label for="api9" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路八</span>
-                            <span class="text-xs text-gray-500 ml-2">经典线路</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api10" name="api" value="https://jx.m3u8.tv/jiexi/?url=" class="peer sr-only">
-                        <label for="api10" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium">线路九</span>
-                            <span class="text-xs text-gray-500 ml-2">高清解析</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api11" name="api" value="http://14.103.112.79:188/so.php?wd=" class="peer sr-only">
-                        <label for="api11" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium STYLE1">搜索线路</span>
-                            <span class="text-xs text-gray-500 ml-2">搜索影片名</span>
-                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="interface-option relative">
-                        <input type="radio" id="api12" name="api" value="http://47.96.82.41/so.php?wd=" class="peer sr-only">
-                        <label for="api12" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors peer-checked:border-primary peer-checked:bg-primary/5">
-                            <span class="font-medium STYLE1">搜索线路</span>
-                            <span class="text-xs text-gray-500 ml-2 STYLE2">搜索影片名</span>                        </label>
-                        <div class="absolute top-2 right-2 text-primary opacity-0 peer-checked:opacity-100 transition-opacity">
-                            <i class="fa fa-check-circle"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 视频播放区域 -->
-        <section id="playerSection" class="bg-white rounded-xl shadow-custom p-6 transform transition-all duration-500 opacity-0 scale-95">
-            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <i class="fa fa-play-circle text-primary mr-2"></i>视频播放
-            </h2>
-            <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden relative shadow-inner">
-                <div id="loadingIndicator" class="absolute inset-0 flex items-center justify-center bg-gray-900 z-10">
-                    <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-4"></div>
-                        <p class="text-white text-sm">视频加载中，请稍候...</p>
-                    </div>
+            <div class="action-card">
+                <div class="download-area">
+                    <span class="download-title">官方地址</span>
+                    <a href="https://slaclouds.com/download?inviteCode=91729535&lang=zh-CN" 
+                       class="btn-download" 
+                       target="_blank" 
+                       rel="noopener noreferrer">立即下载试用</a>
                 </div>
-                <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen class="w-full h-full opacity-0 transition-opacity duration-500"></iframe>
-            </div>
-            <div class="mt-4 flex justify-between items-center">
-                <div class="text-sm text-gray-600">
-                    <span id="currentApi">当前使用：默认线路</span>
-                </div>
-                <button id="fullscreenBtn" class="text-primary hover:text-primary/80 transition-colors flex items-center">
-                    <i class="fa fa-expand mr-1"></i>
-                    <span>全屏播放</span>
-                </button>
-            </div>
-        </section>
 
-        <!-- 使用教程 -->
-        <section class="bg-white rounded-xl shadow-custom p-6 mt-8">
-            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <i class="fa fa-question-circle text-primary mr-2"></i>使用教程
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                        <i class="fa fa-link text-2xl text-primary"></i>
-                    </div>
-                    <h3 class="font-medium text-gray-800 mb-2">1. 复制视频链接</h3>
-                    <p class="text-sm text-gray-600">从视频网站（如优酷、爱奇艺、腾讯视频等）复制视频播放页面的URL</p>
-                </div>
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                        <i class="fa fa-paste text-2xl text-primary"></i>
-                    </div>
-                    <h3 class="font-medium text-gray-800 mb-2">2. 粘贴到输入框</h3>
-                    <p class="text-sm text-gray-600">将复制的URL粘贴到上方的"请输入视频地址"输入框中</p>
-                </div>
-                <div class="flex flex-col items-center text-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                        <i class="fa fa-play text-2xl text-primary"></i>
-                    </div>
-                    <h3 class="font-medium text-gray-800 mb-2">3. 选择接口并播放</h3>
-                    <p class="text-sm text-gray-600">选择合适的解析接口，点击"播放视频"按钮开始播放</p>
+                <div class="invite-box">
+                    <span class="invite-label">注册时填写专属邀请码</span>
+                    <strong class="invite-code">91729535</strong>
+                    <div class="bonus-badge">🎁 获赠 15 天免费时长</div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- 简化的页脚 -->
-    <footer class="bg-dark text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-4 mb-4">
-                <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa fa-github"></i></a>
-                <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa fa-weibo"></i></a>
-                <a href="#" class="hover:text-gray-300 transition-colors"><i class="fa fa-envelope-o"></i></a>
-            </div>
-            <p class="text-sm text-gray-400">© 2025 爬取全网影视 | 保留所有权利</p>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoUrl = document.getElementById('videoUrl');
-            const playBtn = document.getElementById('playBtn');
-            const playerSection = document.getElementById('playerSection');
-            const videoPlayer = document.getElementById('videoPlayer');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            const fullscreenBtn = document.getElementById('fullscreenBtn');
-            const currentApi = document.getElementById('currentApi');
-            
-            // 平台链接点击事件（自动填充对应平台URL）
-            const platformLinks = document.querySelectorAll('.platform-card');
-            platformLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const platform = this.querySelector('div > div:first-child').textContent;
-                    const urlMap = {
-                        '爱奇艺': 'https://www.iqiyi.com/',
-                        '腾讯视频': 'https://v.qq.com/',
-                        '优酷': 'https://www.youku.com/',
-                        '芒果TV': 'https://www.mgtv.com/'
-                    };
-                    videoUrl.value = urlMap[platform] || '';
-                });
-            });
-            
-            // 播放按钮点击事件
-            playBtn.addEventListener('click', function() {
-                const url = videoUrl.value.trim();
-                if (!url) {
-                    alert('请输入视频地址');
-                    return;
-                }
-                
-                // 获取选中的解析接口
-                const selectedApi = document.querySelector('input[name="api"]:checked');
-                if (!selectedApi) {
-                    alert('请选择解析接口');
-                    return;
-                }
-                
-                // 更新当前使用的接口信息
-                const apiNames = {
-                    'api1': '默认线路', 'api2': '线路一', 'api3': '线路二', 'api4': '线路三',
-                    'api5': '线路四', 'api6': '线路五', 'api7': '线路六', 'api8': '线路七',
-                    'api9': '线路八', 'api10': '线路九', 'api11': '搜索线路', 'api12': '搜索线路'
-                };
-                currentApi.textContent = `当前使用：${apiNames[selectedApi.id]}`;
-                
-                // 显示播放区域和加载指示器
-                playerSection.classList.remove('opacity-0', 'scale-95');
-                videoPlayer.classList.add('opacity-0');
-                loadingIndicator.classList.remove('hidden');
-                
-                // 构建解析URL
-                const parseUrl = selectedApi.value + encodeURIComponent(url);
-                
-                // 设置iframe源并显示视频
-                setTimeout(() => {
-                    videoPlayer.src = parseUrl;
-                    videoPlayer.onload = function() {
-                        loadingIndicator.classList.add('hidden');
-                        videoPlayer.classList.remove('opacity-0');
-                    };
-                }, 500);
-            });
-            
-            // 全屏按钮点击事件
-            fullscreenBtn.addEventListener('click', function() {
-                const videoContainer = videoPlayer.parentElement;
-                if (videoContainer.requestFullscreen) {
-                    videoContainer.requestFullscreen();
-                } else if (videoContainer.webkitRequestFullscreen) {
-                    videoContainer.webkitRequestFullscreen();
-                } else if (videoContainer.msRequestFullscreen) {
-                    videoContainer.msRequestFullscreen();
-                }
-            });
-            
-            // 输入框回车事件
-            videoUrl.addEventListener('keyup', function(event) {
-                if (event.key === 'Enter') {
-                    playBtn.click();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
